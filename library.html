@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Page</title>
+  <style>
+    /* --- Basic resets and styling --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      /* Reserve space so bottom nav doesn't overlap content */
+      padding-bottom: 100px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- LibraryHeader (PageTitle: “Library”) --- */
+    .library-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .library-title {
+      /* If you want it centered:
+         left: 50%; transform: translateX(-50%); position: absolute; */
+      font-size: 20px;
+      font-weight: bold;
+      /* left: 50%; */
+      left: 50%; transform: translateX(-50%); position: absolute;
+      /* padding-left: 20%; */
+      /* For left alignment, just remove absolute positioning */
+    }
+
+    /* --- Library Page Container --- */
+    .library-page-container {
+      padding: 20px;
+    }
+
+    /* --- BookGridSection --- */
+    .book-grid-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      /* Adjust as needed for your design */
+      margin-top: 20px;
+    }
+
+    /* --- BookCard (within the grid) --- */
+    .book-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      /* If you have a fixed width/height in mind, set them here */
+    }
+    .book-cover {
+      width: 130px; 
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .book-stats {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* --- Optional Book Title inside the card --- */
+    .book-title {
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: center;
+      color: #333;
+    }
+
+   /* Bottom Navigation Bar */
+      /* Bottom Navigation Bar - pill-shaped container */
+    .bottom-navigation-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 90%;
+      max-width: 600px;
+      background-color: #fff;
+      border: 2px solid #A92CC7; /* Purple border */
+      border-radius: 50px;       /* Creates the pill shape */
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 999; /* Keep it on top if needed */
+    }
+
+    /* Each navigation item */
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;           /* Make each item expand equally */
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    /* Default icon styling */
+    .nav-item .icon {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    /* 1) Home item: Purple icon & text on white background */
+    .nav-item.library {
+      color: #A92CC7; 
+    }
+
+    /* 2) Library item: Gray icon & text on white background */
+    /* .nav-item.library {
+      color: #666; 
+    } */
+
+    /* 3) Reading session: Purple background & white text/icon */
+    .nav-item.reading-session {
+      background-color: #A92CC7;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px; /* Smaller pill inside the main pill */
+      margin-left: 5px;    /* Add a slight gap from the library item */
+    }
+
+    /* Optional hover effect */
+    .nav-item:hover {
+      background-color: #f5f5f5;
+      border-radius: 50px;
+    }
+    .nav-item.reading-session:hover {
+      background-color: #7d3cb1; /* Slightly darker purple on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LibraryHeader -->
+  <header class="library-header">
+    <a href="index.html">
+  <img src="backarow.png" alt="User Avatar" class="user-avatar" />
+</a>
+    <h1 class="library-title">Library</h1>
+  </header>
+
+  <!-- LibraryPageContainer -->
+  <main class="library-page-container">
+    <!-- BookGridSection -->
+    <section class="book-grid-section">
+      <!-- Repeated BookCard items -->
+      <div class="book-card">
+        <img src="book-cover.png" alt="Book Cover" class="book-cover" />
+        <!-- Optional Title -->
+        <p class="book-title">man Erkenntnisse ...</p>
+        <!-- <div class="book-stats">
+          <span>🎧 325</span>
+          <span>📖 8</span>
+        </div> -->
+      </div>
+
+      <div class="book-card">
+        <img src="book-cover1.png" alt="Book Cover" class="book-cover" />
+        <p class="book-title">Wie erlangt  ...</p>
+        <!-- <div class="book-stats">
+          <span>🎧 325</span>
+          <span>📖 8</span>
+        </div> -->
+      </div>
+
+      <div class="book-card">
+        <img src="book-cover1.png" alt="Book Cover" class="book-cover" />
+        <p class="book-title">Wie erlangt man Erkenntnisse ...</p>
+        <!-- <div class="book-stats">
+          <span>🎧 325</span>
+          <span>📖 8</span>
+        </div> -->
+      </div>
+
+      <div class="book-card">
+        <img src="book-cover.png" alt="Book Cover" class="book-cover" />
+        <p class="book-title">Wie erlangt man Erkenntnisse ...</p>
+        <!-- <div class="book-stats">
+          <span>🎧 325</span>
+          <span>📖 8</span>
+        </div> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <footer class="bottom-navigation-bar">
+    <!-- Home Nav Item -->
+    <div class="nav-item home">
+        <a href="index.html">
+        <div class="icon">🏠</div>
+        <p>Home</p>
+      </a>
+      </div>
+      <!-- Library Nav Item -->
+    <div class="nav-item library">
+      <a href="library.html">
+          <div class="icon">📚</div>
+          <p>Library</p>
+        </a>
+    </div>
+    <!-- Reading Session Nav Item -->
+    <div class="nav-item reading-session">
+      <div class="icon">📖</div>
+      <p>Reading session</p>
+    </div>
+  </footer>
+
+</body>
+</html>

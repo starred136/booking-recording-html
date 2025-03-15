@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discover New Books</title>
+  <style>
+    /* --- General resets and base styling --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding-bottom: 100px; /* Reserve space for bottom nav if used */
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- PageHeader (DiscoverNewBooksContainer) --- */
+    .page-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .page-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* --- Main Container for DiscoverNewBooksPage --- */
+    .discover-new-books-container {
+      padding: 20px;
+    }
+
+    /* --- BookDetailCard --- */
+    .book-detail-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin-bottom: 20px;
+
+    }
+    .book-detail-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px; /* space between cover & text area */
+    }
+    .book-cover-image {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+    .book-info {
+      flex: 1; /* let the text area expand */
+      
+    }
+    .book-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .book-author {
+      font-size: 14px;
+      color: #A92CC7;
+      margin-bottom: 10px;
+    }
+    .book-stats {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+    .listen-to-book-button {
+      background-color: #A92CC7;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .listen-to-book-button:hover {
+      background-color: #7d3cb1;
+    }
+
+    /* --- AboutBookSection --- */
+    .about-book-section {
+      margin-top: 15px;
+    }
+    .about-book-heading {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .about-book-description {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- PageHeader -->
+  <!-- React Component: PageHeader -->
+  <header class="page-header">
+<a href="index.html">
+  <img src="backarow.png" alt="User Avatar" class="user-avatar" />
+</a>
+    <h1 class="page-title">Discover new books</h1>
+  </header>
+
+  <!-- DiscoverNewBooksPage Container -->
+  <!-- React Component: DiscoverNewBooksContainer -->
+  <main class="discover-new-books-container">
+    <!-- BookDetailCard -->
+    <!-- React Component: BookDetailCard -->
+    <section class="book-detail-card">
+      <div class="book-detail-header">
+        
+            <img 
+            src="book-cover.png" 
+            alt="Book Cover" 
+            class="book-cover-image"
+            />
+                  
+        <div class="book-info">
+          <h2 class="book-title">Wie erlangt man Erkenntnisse der höheren Welten?</h2>
+          <p class="book-author">Rudolf Steiner</p>
+          <div class="book-stats">
+            <span>🎧 325</span>
+            <span>📖 8</span>
+          </div>
+          <!-- React UI element: ListenToBookButton -->
+          <button class="listen-to-book-button">Listen to book</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AboutBookSection -->
+    <!-- React Component: AboutBookSection -->
+    <section class="about-book-section">
+      <h3 class="about-book-heading">About book</h3>
+      <p class="about-book-description">
+        In this book Rudolf Steiner shows step by step how every human being can
+        gain access to the spiritual world. Within the innumerable books on the
+        subject of meditation, Rudolf Steiner's classic is characterized by its
+        factual language and attitude, which eschews all diffuse rapture.
+      </p>
+    </section>
+  </main>
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <style>
+    /* General resets and base styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding-bottom: 70px; /* To avoid overlap with bottom nav */
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Top Navigation Bar */
+    .home-navigation-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      height: 100px;
+    }
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      /* Position remains in the normal flow on the left */
+    }
+    .nav-heading {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    /* Main content area */
+    .home-page {
+      padding: 20px;
+    }
+    .book-feature-section {
+      margin-bottom: 30px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 18px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .section-header h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .section-header p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    
+    /* Book Card Styles */
+    .book-card {
+      display: flex;
+      align-items: center;
+      justify-content:flex-start;
+      flex-direction:row;
+      padding: 15px;
+      border-radius: 20px;
+      width: 300px; 
+      /* Adjust as needed */
+      margin-bottom: 10px;
+
+
+    }
+    .book-cover {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .book-cover1 {
+      /* width: 250px;
+      height: 350px; */
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .book-stats {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Align text/icons to the right */
+      gap: 10px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .see-more {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #A92CC7;
+      cursor: pointer;
+    }
+    
+    /* Tag Filter Styles */
+    .tag-filter {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .filter-btn {
+      padding: 5px 10px;
+      border: 1px solid #A92CC7;
+      background-color: #fff;
+      color: #A92CC7;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .filter-btn:hover {
+      background-color: #f0f0f0;
+    }
+    .filter-btn.active {
+      background-color: #A92CC7;
+      color: #fff;
+      border-color: #A92CC7;
+    }
+    
+    /* Bottom Navigation Bar */
+      /* Bottom Navigation Bar - pill-shaped container */
+    .bottom-navigation-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 90%;
+      max-width: 600px;
+      background-color: #fff;
+      border: 2px solid #A92CC7; /* Purple border */
+      border-radius: 50px;       /* Creates the pill shape */
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 999; /* Keep it on top if needed */
+    }
+
+    /* Each navigation item */
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;           /* Make each item expand equally */
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    /* Default icon styling */
+    .nav-item .icon {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    /* 1) Home item: Purple icon & text on white background */
+    .nav-item.home {
+      color: #A92CC7; 
+    }
+
+    /* 2) Library item: Gray icon & text on white background */
+    .nav-item.library {
+      color: #666; 
+    }
+
+    /* 3) Reading session: Purple background & white text/icon */
+    .nav-item.reading-session {
+      background-color: #A92CC7;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px; /* Smaller pill inside the main pill */
+      margin-left: 5px;    /* Add a slight gap from the library item */
+    }
+
+    /* Optional hover effect */
+    .nav-item:hover {
+      background-color: #f5f5f5;
+      border-radius: 50px;
+    }
+    .nav-item.reading-session:hover {
+      background-color: #7d3cb1; /* Slightly darker purple on hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <nav class="home-navigation-bar">
+    <img src="user-avatar.png" alt="User Avatar" class="user-avatar" />
+    <h1 class="nav-heading">Home</h1>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="home-page">
+    <!-- From Your Library Section -->
+    <section class="book-feature-section">
+      <div class="section-header">
+        <h2>From your library</h2>
+        <p>Your favorite books you have listened to</p>
+      </div>
+      <div class="book-card">
+        <a href="discover.html">
+
+          <img src="book-cover.png" alt="Book Cover" class="book-cover" />
+        </a>
+      </div>
+    </section>
+
+    <!-- Live Now Section -->
+    <section class="book-feature-section">
+      <div class="section-header">
+        <h2>Live now</h2>
+        <p>Someone you know may be listening</p>
+      </div>
+      <div class="book-card">
+        <a href="discover.html">
+          <img src="book-cover1.png" alt="Book Cover" class="book-cover1" />
+        </a>
+        <!-- <div class="book-stats">
+          <span class="listener-icon">🎧 325</span>
+          <span class="reader-icon">📖 8</span>
+        </div> -->
+      </div>
+      <a href="#" class="see-more">See all →</a>
+    </section>
+
+    <!-- Recommended For You Section -->
+    <section class="book-feature-section">
+      <div class="section-header">
+        <h2>Recommended for you</h2>
+        <p>Based on books you have listened recently</p>
+      </div>
+      <div class="book-card">
+        <a href="discover.html">
+          <img src="book-cover.png" alt="Book Cover" class="book-cover" />
+
+        </a>     
+      </div>
+      <a href="#" class="see-more">See all →</a>
+    </section>
+
+    <!-- Discover Books Section -->
+    <section class="book-feature-section">
+      <div class="section-header">
+        <h2>Discover books</h2>
+        <p>Based on your interests</p>
+      </div>
+      <div class="tag-filter">
+        <button class="filter-btn active">Most listened</button>
+        <button class="filter-btn">Most sessions</button>
+      </div>
+      <div class="book-card">
+        <a href="discover.html">
+          <img src="book-cover.png" alt="Book Cover" class="book-cover" />
+        </a>
+      </div>
+      <a href="#" class="see-more">More from this category →</a>
+    </section>
+  </main>
+
+   <!-- Bottom Navigation Bar -->
+  <footer class="bottom-navigation-bar">
+    <!-- Home Nav Item -->
+    <div class="nav-item home">
+        <a href="index.html">
+        <div class="icon">🏠</div>
+        <p>Home</p>
+      </a>
+      </div>
+      <!-- Library Nav Item -->
+    <div class="nav-item library">
+      <a href="library.html">  
+        <div class="icon">📚</div>
+        <p>Library</p>
+      </a>
+    </div>
+    <!-- Reading Session Nav Item -->
+    <div class="nav-item reading-session">
+      <div class="icon">📖</div>
+      <p>Reading session</p>
+    </div>
+  </footer>
+</body>
+</html>
