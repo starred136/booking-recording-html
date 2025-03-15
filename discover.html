@@ -64,11 +64,11 @@
       align-items: flex-start;
       gap: 15px; /* space between cover & text area */
     }
-    .book-cover-image {
-      width: 250px;
-      height: 350px;
+    .book-cover {
+      width: 150px;
+      height: 250px;
       object-fit: cover;
-      border-radius: 5px;
+      border-radius: 16px;
       flex-shrink: 0;
     }
     .book-info {
@@ -100,6 +100,9 @@
       font-size: 14px;
       cursor: pointer;
       transition: background-color 0.2s ease;
+      margin-top: 80px;
+      width: 100%;
+      font-size: 13px;
     }
     .listen-to-book-button:hover {
       background-color: #7d3cb1;
@@ -144,7 +147,7 @@
             <img 
             src="book-cover.png" 
             alt="Book Cover" 
-            class="book-cover-image"
+            class="book-cover"
             />
                   
         <div class="book-info">
