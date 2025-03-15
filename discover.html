@@ -130,7 +130,7 @@
   <!-- PageHeader -->
   <!-- React Component: PageHeader -->
   <header class="page-header">
-<a href="index.html">
+<a href="javascript:void(0);" onclick="window.history.back()" >
   <img src="backarow.png" alt="User Avatar" class="user-avatar" />
 </a>
     <h1 class="page-title">Discover new books</h1>
@@ -151,6 +151,7 @@
             />
                   
         <div class="book-info">
+
           <h2 class="book-title">Wie erlangt man Erkenntnisse der höheren Welten?</h2>
           <p class="book-author">Rudolf Steiner</p>
           <div class="book-stats">
@@ -176,7 +177,11 @@
     </section>
   </main>
 
- 
+ <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
 
 </body>
 </html>

@@ -69,6 +69,12 @@
       
       /* If you have a fixed width/height in mind, set them here */
     }
+    .book-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
     .book-cover {
       width: 130px; 
       height: 150px;
@@ -163,7 +169,7 @@
 
   <!-- LibraryHeader -->
   <header class="library-header">
-    <a href="index.html">
+    <a href="javascript:void(0);" onclick="window.history.back()" >
   <img src="backarow.png" alt="User Avatar" class="user-avatar" />
 </a>
     <h1 class="library-title">Library</h1>
@@ -173,43 +179,60 @@
   <main class="library-page-container">
     <!-- BookGridSection -->
     <section class="book-grid-section">
-      <!-- Repeated BookCard items -->
-      <div class="book-card">
-        <img src="book-cover.png" alt="Book Cover" class="book-cover" />
-        <!-- Optional Title -->
-        <p class="book-title">man Erkenntnisse ...</p>
-        <!-- <div class="book-stats">
-          <span>🎧 325</span>
-          <span>📖 8</span>
-        </div> -->
-      </div>
 
-      <div class="book-card">
-        <img src="book-cover1.png" alt="Book Cover" class="book-cover" />
+
+      <!-- Repeated BookCard items -->
+       <a href="discover.html" class="book-card-link">
+
+         <div class="book-card">
+           <img src="book-cover.png" alt="Book Cover" class="book-cover" />
+           <!-- Optional Title -->
+           <p class="book-title">man Erkenntnisse ...</p>
+           <!-- <div class="book-stats">
+             <span>🎧 325</span>
+             <span>📖 8</span>
+            </div> -->
+          </div>
+        </a>
+
+       <a href="discover.html" class="book-card-link">
+
+         <div class="book-card">
+           <img src="book-cover1.png" alt="Book Cover" class="book-cover" />
         <p class="book-title">Wie erlangt  ...</p>
         <!-- <div class="book-stats">
           <span>🎧 325</span>
           <span>📖 8</span>
         </div> -->
       </div>
+    </a>
 
-      <div class="book-card">
-        <img src="book-cover1.png" alt="Book Cover" class="book-cover" />
-        <p class="book-title">Wie erlangt man Erkenntnisse ...</p>
-        <!-- <div class="book-stats">
-          <span>🎧 325</span>
-          <span>📖 8</span>
-        </div> -->
-      </div>
+       <a href="discover.html" class="book-card-link">
 
-      <div class="book-card">
-        <img src="book-cover.png" alt="Book Cover" class="book-cover" />
-        <p class="book-title">Wie erlangt man Erkenntnisse ...</p>
-        <!-- <div class="book-stats">
-          <span>🎧 325</span>
-          <span>📖 8</span>
-        </div> -->
-      </div>
+         
+         <div class="book-card">
+           <img src="book-cover1.png" alt="Book Cover" class="book-cover" />
+           <p class="book-title">Wie erlangt man Erkenntnisse ...</p>
+           <!-- <div class="book-stats">
+             <span>🎧 325</span>
+             <span>📖 8</span>
+            </div> -->
+          </div>
+        </a>
+         
+       <a href="discover.html" class="book-card-link">
+
+         <div class="book-card">
+           <img src="book-cover.png" alt="Book Cover" class="book-cover" />
+           <p class="book-title">Wie erlangt man Erkenntnisse ...</p>
+           <!-- <div class="book-stats">
+             <span>🎧 325</span>
+             <span>📖 8</span>
+            </div> -->
+          </div>
+        </a>
+
+
     </section>
   </main>
 
@@ -234,7 +257,12 @@
       <div class="icon">📖</div>
       <p>Buch vorlesen</p>
     </div>
-  </footer>
 
+  </footer>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
 </body>
 </html>
